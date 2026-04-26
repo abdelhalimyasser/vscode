@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 namespace model;
+
+use DateTimeImmutable;
+use Exception;
 use http\Exception\RuntimeException;
 use model\enum\ApplicationsStatus;
 use model\enum\ReferralBonusStatus;
