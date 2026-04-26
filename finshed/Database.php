@@ -10,7 +10,7 @@ class Database
 {
     private static ?PDO $connection = null;
 
-    private static string $host = 'localhost';
+    private const static string $host = 'localhost';
     private static string $dbname = 'nexthire_db';
     private static string $username = 'root';
     private static string $password = '';
