@@ -2,27 +2,41 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
+
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class Document
 {
-    private int $id = 0;
-    private ?string $to = null;
-    private ?string $from = null;
-    private ?\DateTimeImmutable $date = null;
-    private ?mixed $salary = null;
-    private ?mixed $bonus = null;
-    private ?string $stockOptions = null;
-    private ?string $path = null;
-    private ?\DateTimeImmutable $createdAt = null;
+    private int $id;
+    private string $to;
+    private string $from;
+    private DateTimeImmutable $date;
+    private mixed $salary;
+    private mixed $bonus;
+    private string $stockOptions;
+    private string $path;
+    private DateTimeImmutable $createdAt;
 
+    /***/
     public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -49,7 +63,6 @@ class Document
     }
 
     /**
-     *
      * @param string $from
      */
     public function setFrom(string $from): void
@@ -63,8 +76,7 @@ class Document
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $date
+     * @param DateTimeImmutable $date
      */
     public function setDate(\DateTimeImmutable $date): void
     {
@@ -77,7 +89,6 @@ class Document
     }
 
     /**
-     *
      * @param mixed $salary
      */
     public function setSalary(mixed $salary): void
@@ -91,7 +102,6 @@ class Document
     }
 
     /**
-     *
      * @param mixed $bonus
      */
     public function setBonus(mixed $bonus): void
@@ -105,7 +115,6 @@ class Document
     }
 
     /**
-     *
      * @param string $stockOptions
      */
     public function setStockOptions(string $stockOptions): void
@@ -119,7 +128,6 @@ class Document
     }
 
     /**
-     *
      * @param string $path
      */
     public function setPath(string $path): void
@@ -133,8 +141,7 @@ class Document
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {

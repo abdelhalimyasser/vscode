@@ -2,35 +2,48 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
+
+/**
+ * Class CandidateSentiment
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class CandidateSentiment
 {
-    private int $id = 0;
-    private int $platformOverallExperience = 0;
-    private int $interviewScore = 0;
-    private int $interviewOverallExperience = 0;
-    private int $interviewerScore = 0;
-    private int $questionsVariety = 0;
-    private int $questionsOverallScore = 0;
-    private ?string $notes = null;
-    private ?\DateTimeImmutable $createdAt = null;
+    private string $id;
+    private int $platformOverallExperience;
+    private int $interviewScore;
+    private int $interviewOverallExperience;
+    private int $interviewerScore;
+    private int $questionsVariety;
+    private int $questionsOverallScore;
+    private string $notes;
+    private DateTimeImmutable $createdAt;
 
+    /***/
     public function __construct()
     {
-        throw new \BadMethodCallException('Not implemented.');
     }
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     *
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
@@ -41,7 +54,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $platformOverallExperience
      */
     public function setPlatformOverallExperience(int $platformOverallExperience): void
@@ -55,7 +67,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $interviewScore
      */
     public function setInterviewScore(int $interviewScore): void
@@ -69,7 +80,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $interviewOverallExperience
      */
     public function setInterviewOverallExperience(int $interviewOverallExperience): void
@@ -83,7 +93,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $interviewerScore
      */
     public function setInterviewerScore(int $interviewerScore): void
@@ -97,7 +106,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $questionsVariety
      */
     public function setQuestionsVariety(int $questionsVariety): void
@@ -111,7 +119,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param int $questionsOverallScore
      */
     public function setQuestionsOverallScore(int $questionsOverallScore): void
@@ -125,7 +132,6 @@ class CandidateSentiment
     }
 
     /**
-     *
      * @param string $notes
      */
     public function setNotes(string $notes): void
@@ -139,8 +145,7 @@ class CandidateSentiment
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {

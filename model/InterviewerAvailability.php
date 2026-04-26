@@ -2,8 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
+
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class InterviewerAvailability
 {
     private int $id = 0;
@@ -12,6 +26,7 @@ class InterviewerAvailability
     private bool $isBooked = false;
     private int $interviewerId = 0;
 
+    /***/
     public function __construct()
     {
         throw new \BadMethodCallException('Not implemented.');
@@ -23,7 +38,6 @@ class InterviewerAvailability
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -37,8 +51,7 @@ class InterviewerAvailability
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $startTime
+     * @param DateTimeImmutable $startTime
      */
     public function setStartTime(\DateTimeImmutable $startTime): void
     {
@@ -51,7 +64,6 @@ class InterviewerAvailability
     }
 
     /**
-     *
      * @param \DateTimeImmutable $endTime
      */
     public function setEndTime(\DateTimeImmutable $endTime): void
@@ -65,7 +77,6 @@ class InterviewerAvailability
     }
 
     /**
-     *
      * @param bool $isBooked
      */
     public function setIsBooked(bool $isBooked): void
@@ -79,7 +90,6 @@ class InterviewerAvailability
     }
 
     /**
-     *
      * @param int $interviewerId
      */
     public function setInterviewerId(int $interviewerId): void

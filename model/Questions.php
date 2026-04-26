@@ -2,11 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
-use App\Model\Enums\QuestionCategory;
-use App\Model\Enums\QuestionDifficulty;
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
 
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class Questions
 {
     private int $id = 0;
@@ -18,6 +29,7 @@ class Questions
     private ?QuestionDifficulty $difficulty = null;
     private ?\DateTimeImmutable $createdAt = null;
 
+    /***/
     public function __construct()
     {
         throw new \BadMethodCallException('Not implemented.');
@@ -29,7 +41,6 @@ class Questions
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -43,7 +54,6 @@ class Questions
     }
 
     /**
-     *
      * @param string $questions
      */
     public function setQuestions(string $questions): void
@@ -57,7 +67,6 @@ class Questions
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription(string $description): void
@@ -71,7 +80,6 @@ class Questions
     }
 
     /**
-     *
      * @param QuestionCategory $category
      */
     public function setCategory(QuestionCategory $category): void
@@ -85,7 +93,6 @@ class Questions
     }
 
     /**
-     *
      * @param string $recommendedBaseAnswer
      */
     public function setRecommendedBaseAnswer(string $recommendedBaseAnswer): void
@@ -99,7 +106,6 @@ class Questions
     }
 
     /**
-     *
      * @param array $testCases
      */
     public function setTestCases(array $testCases): void
@@ -107,13 +113,12 @@ class Questions
         $this->testCases = $testCases;
     }
 
-    public function getDifficulty(): ?QuestionDifficulty
+    public function getDifficulty(): QuestionDifficulty
     {
         return $this->difficulty;
     }
 
     /**
-     *
      * @param QuestionDifficulty $difficulty
      */
     public function setDifficulty(QuestionDifficulty $difficulty): void
@@ -121,16 +126,15 @@ class Questions
         $this->difficulty = $difficulty;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }

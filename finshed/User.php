@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace model;
-use http\Exception\RuntimeException;
+
 use model\enum\UserRole;
 
 use DateTime;
 use DateTimeImmutable;
+use http\Exception\RuntimeException;
 use Exception as Exception;
 
 /**
@@ -100,7 +101,7 @@ class User
         $this->id = $id;
     }
 
-    public function getFirstName(): ?string
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
@@ -113,7 +114,7 @@ class User
         $this->firstName = $firstName;
     }
 
-    public function getLastName(): ?string
+    public function getLastName(): string
     {
         return $this->lastName;
     }
@@ -152,7 +153,7 @@ class User
         $this->email = $email;
     }
 
-    public function getCountryCode(): ?string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -165,7 +166,7 @@ class User
         $this->countryCode = $countryCode;
     }
 
-    public function getPhoneNumber(): ?string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -191,7 +192,7 @@ class User
         $this->role = $role;
     }
 
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -230,7 +231,7 @@ class User
         $this->experienceYear = $experienceYear;
     }
 
-    public function getResumePath(): ?string
+    public function getResumePath(): string
     {
         return $this->resumePath;
     }
@@ -243,7 +244,7 @@ class User
         $this->resumePath = $resumePath;
     }
 
-    public function getDocs(): ?string
+    public function getDocs(): string
     {
         return $this->docs;
     }

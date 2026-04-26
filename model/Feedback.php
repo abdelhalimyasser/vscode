@@ -2,8 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
+
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class Feedback
 {
     private int $id = 0;
@@ -20,6 +34,7 @@ class Feedback
     private ?string $notes = null;
     private ?\DateTimeImmutable $createdAt = null;
 
+    /***/
     public function __construct()
     {
         throw new \BadMethodCallException('Not implemented.');
@@ -31,7 +46,6 @@ class Feedback
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -45,7 +59,6 @@ class Feedback
     }
 
     /**
-     *
      * @param int $solvedQuestions
      */
     public function setSolvedQuestions(int $solvedQuestions): void
@@ -59,7 +72,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $problemSolving
      */
     public function setProblemSolving(mixed $problemSolving): void
@@ -73,7 +85,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $codeCleaning
      */
     public function setCodeCleaning(mixed $codeCleaning): void
@@ -87,7 +98,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $codeComplexity
      */
     public function setCodeComplexity(mixed $codeComplexity): void
@@ -101,7 +111,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $architecture
      */
     public function setArchitecture(mixed $architecture): void
@@ -115,7 +124,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $selfConfidence
      */
     public function setSelfConfidence(mixed $selfConfidence): void
@@ -129,7 +137,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $communication
      */
     public function setCommunication(mixed $communication): void
@@ -143,7 +150,6 @@ class Feedback
     }
 
     /**
-     *
      * @param int $total
      */
     public function setTotal(int $total): void
@@ -157,7 +163,6 @@ class Feedback
     }
 
     /**
-     *
      * @param mixed $normalizedScore
      */
     public function setNormalizedScore(mixed $normalizedScore): void
@@ -171,7 +176,6 @@ class Feedback
     }
 
     /**
-     *
      * @param bool $redFlag
      */
     public function setRedFlag(bool $redFlag): void
@@ -185,7 +189,6 @@ class Feedback
     }
 
     /**
-     *
      * @param string $notes
      */
     public function setNotes(string $notes): void
@@ -199,8 +202,7 @@ class Feedback
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {

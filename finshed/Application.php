@@ -7,12 +7,15 @@ namespace model;
 use DateTimeImmutable;
 use Exception;
 use http\Exception\RuntimeException;
+
 use model\enum\ApplicationsStatus;
 use model\enum\ReferralBonusStatus;
+
 /**
  * Class Application
  *
- * Represents an application in the system, which is associated with a candidate and a job posting. It contains information about the application status, match score, referral bonus status, and creation date.
+ * Represents an application in the system, which is associated with a candidate and a job posting.
+ * It contains information about the application status, match score, referral bonus status, and creation date.
  *
  * @package model
  * @version 1.0
@@ -58,7 +61,6 @@ class Application
     }
 
     /**
-     *
      * @param string $id
      */
     public function setId(string $id): void
@@ -72,7 +74,6 @@ class Application
     }
 
     /**
-     *
      * @param ApplicationsStatus $status
      */
     public function setStatus(ApplicationsStatus $status): void
@@ -86,7 +87,6 @@ class Application
     }
 
     /**
-     *
      * @param int $matchScore
      */
     public function setMatchScore(int $matchScore): void
@@ -100,7 +100,6 @@ class Application
     }
 
     /**
-     *
      * @param ReferralBonusStatus $referralBonusStatus
      */
     public function setReferralBonusStatus(ReferralBonusStatus $referralBonusStatus): void
@@ -114,7 +113,6 @@ class Application
     }
 
     /**
-     *
      * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(DateTimeImmutable $createdAt): void

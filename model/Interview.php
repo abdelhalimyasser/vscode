@@ -2,10 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
-use App\Model\Enums\InterviewStatus;
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
 
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class Interview
 {
     private int $id = 0;
@@ -16,6 +28,7 @@ class Interview
     private ?\DateTimeImmutable $createdAt = null;
     private ?InterviewStatus $interviewStatus = null;
 
+    /***/
     public function __construct()
     {
         throw new \BadMethodCallException('Not implemented.');
@@ -27,7 +40,6 @@ class Interview
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -41,8 +53,7 @@ class Interview
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $scheduledAt
+     * @param DateTimeImmutable $scheduledAt
      */
     public function setScheduledAt(\DateTimeImmutable $scheduledAt): void
     {
@@ -55,8 +66,7 @@ class Interview
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $beganAt
+     * @param DateTimeImmutable $beganAt
      */
     public function setBeganAt(\DateTimeImmutable $beganAt): void
     {
@@ -69,7 +79,6 @@ class Interview
     }
 
     /**
-     *
      * @param \DateTimeImmutable $endedAt
      */
     public function setEndedAt(\DateTimeImmutable $endedAt): void
@@ -83,7 +92,6 @@ class Interview
     }
 
     /**
-     *
      * @param bool $attended
      */
     public function setAttended(bool $attended): void
@@ -97,8 +105,7 @@ class Interview
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
@@ -111,7 +118,6 @@ class Interview
     }
 
     /**
-     *
      * @param InterviewStatus $interviewStatus
      */
     public function setInterviewStatus(InterviewStatus $interviewStatus): void

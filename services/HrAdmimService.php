@@ -4,6 +4,17 @@ declare(strict_types=1);
 
 namespace App\Model;
 
+use model\InterviewParticipant;
+
+/**
+ * Class
+ *
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class HrAdmimService extends InterviewParticipant
 {
     public function addJob(): void

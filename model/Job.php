@@ -2,10 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Model;
+namespace model;
 
-use App\Model\Enums\JobStatus;
+use DateTimeImmutable;
+use Exception;
+use RuntimeException;
 
+/**
+ * Class
+ *
+ * Represents
+ *
+ * @package model
+ * @author
+ * @version 1.0
+ * @since 27-04-2026
+*/
 class Job
 {
     private int $id = 0;
@@ -16,6 +28,7 @@ class Job
     private array $jobSkills = [];
     private ?\DateTimeImmutable $createdAt = null;
 
+    /***/
     public function __construct()
     {
         throw new \BadMethodCallException('Not implemented.');
@@ -27,7 +40,6 @@ class Job
     }
 
     /**
-     *
      * @param int $id
      */
     public function setId(int $id): void
@@ -41,7 +53,6 @@ class Job
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle(string $title): void
@@ -55,7 +66,6 @@ class Job
     }
 
     /**
-     *
      * @param string $department
      */
     public function setDepartment(string $department): void
@@ -69,7 +79,6 @@ class Job
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription(string $description): void
@@ -83,7 +92,6 @@ class Job
     }
 
     /**
-     *
      * @param JobStatus $status
      */
     public function setStatus(JobStatus $status): void
@@ -97,7 +105,6 @@ class Job
     }
 
     /**
-     *
      * @param array $jobSkills
      */
     public function setJobSkills(array $jobSkills): void
@@ -111,8 +118,7 @@ class Job
     }
 
     /**
-     *
-     * @param \DateTimeImmutable $createdAt
+     * @param DateTimeImmutable $createdAt
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {

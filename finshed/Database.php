@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace model;
@@ -6,11 +7,22 @@ namespace model;
 use PDO;
 use PDOException;
 
+/**
+ * Class Database
+ *
+ * Represents Database in a system,
+ *
+ * @package model
+ * @author Abdelhalim Yasser
+ * @version 1.0
+ * @since 26-04-2026
+*/
+
 class Database
 {
     private static ?PDO $connection = null;
 
-    private const static string $host = 'localhost';
+    private static string $host = 'localhost';
     private static string $dbname = 'nexthire_db';
     private static string $username = 'root';
     private static string $password = '';
