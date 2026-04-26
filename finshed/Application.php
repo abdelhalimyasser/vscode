@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 namespace model;
-
+use http\Exception\RuntimeException;
 use model\enum\ApplicationsStatus;
 use model\enum\ReferralBonusStatus;
 /**
@@ -23,16 +23,15 @@ class Application
     private int $matchScore;
     private ReferralBonusStatus $referralBonusStatus;
     private DateTimeImmutable $createdAt;
+
     /**
-     * @param string $id
      * @param ApplicationsStatus $status
      * @param int $matchScore
      * @param ReferralBonusStatus $referralBonusStatus
      * @param DateTimeImmutable $createdAt
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct(
-        string $id,
         ApplicationsStatus $status,
         int $matchScore,
         ReferralBonusStatus $referralBonusStatus,
@@ -41,13 +40,12 @@ class Application
     {
         try {
             $this->id = uniqid('app_', true);
-            $this->id = $id;
             $this->status = $status;
             $this->matchScore = $matchScore;
             $this->referralBonusStatus = $referralBonusStatus;
             $this->createdAt = new DateTimeImmutable();
-        } catch (\Exception $e) {
-            throw new \Exception("Error creating Application: " . $e->getMessage());
+        } catch (Exception $e) {
+            throw new RuntimeException('Error creating Application: ' . $e->getMessage());
         }
     }
 
