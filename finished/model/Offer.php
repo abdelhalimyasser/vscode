@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\OfferStatus;
-
 use DateTimeImmutable;
+use enum\OfferStatus;
 use Exception;
 use RuntimeException;
 

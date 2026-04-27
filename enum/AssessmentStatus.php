@@ -1,4 +1,0 @@
-<?php
-
-enum AssessmentStatus : string
-{}

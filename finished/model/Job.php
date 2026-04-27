@@ -7,47 +7,71 @@ namespace model;
 use DateTimeImmutable;
 use Exception;
 use RuntimeException;
-
+use enum\JobStatus;
 /**
  * Class
  *
  * Represents
  *
  * @package model
- * @author
+ * @author Ali Samy
  * @version 1.0
  * @since 27-04-2026
 */
 class Job
 {
-    private int $id = 0;
-    private ?string $title = null;
-    private ?string $department = null;
-    private ?string $description = null;
-    private ?JobStatus $status = null;
+    private string $id;
+    private string $title;
+    private string $department;
+    private string $description;
+    private JobStatus $status;
     private array $jobSkills = [];
-    private ?\DateTimeImmutable $createdAt = null;
+    private DateTimeImmutable $createdAt;
 
-    /***/
-    public function __construct()
-    {
-        throw new \BadMethodCallException('Not implemented.');
+    /**
+     * @param string $title
+     * @param string $department
+     * @param string $description
+     * @param JobStatus $status
+     * @param array $jobSkills
+     * @param DateTimeImmutable $createdAt
+     * @throws Exception
+    */
+    public function __construct(
+        string $title,
+        string $department,
+        string $description,
+        JobStatus $status,
+        array $jobSkills,
+        DateTimeImmutable $createdAt
+    ) {
+        try {
+            $this->id = uniqid('job_', true);
+            $this->title = $title;
+            $this->department = $department;
+            $this->description = $description;
+            $this->status = $status;
+            $this->jobSkills = $jobSkills;
+            $this->createdAt = new DateTimeImmutable();
+        } catch (Exception $e) {
+            throw new RuntimeException('Error creating job: ' . $e->getMessage(), 0, $e);
+        }
     }
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -60,7 +84,7 @@ class Job
         $this->title = $title;
     }
 
-    public function getDepartment(): ?string
+    public function getDepartment(): string
     {
         return $this->department;
     }
@@ -73,7 +97,7 @@ class Job
         $this->department = $department;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -86,7 +110,7 @@ class Job
         $this->description = $description;
     }
 
-    public function getStatus(): ?JobStatus
+    public function getStatus(): JobStatus
     {
         return $this->status;
     }
@@ -112,7 +136,7 @@ class Job
         $this->jobSkills = $jobSkills;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -120,7 +144,7 @@ class Job
     /**
      * @param DateTimeImmutable $createdAt
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }

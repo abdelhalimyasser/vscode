@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace model;
 
+use Cassandra\Uuid;
 use DateTimeImmutable;
 use Exception;
 use RuntimeException;
@@ -11,10 +12,10 @@ use RuntimeException;
 /**
  * Class CandidateSentiment
  *
- * Represents
+ * Represents the sentiment of a candidate regarding their experience with the platform and the interview process.
  *
  * @package model
- * @author
+ * @author Ali Samy
  * @version 1.0
  * @since 27-04-2026
 */
@@ -31,10 +32,31 @@ class CandidateSentiment
     private DateTimeImmutable $createdAt;
 
     /***/
-    public function __construct()
+    public function __construct(
+        int $platformOverallExperience,
+        int $interviewScore,
+        int $interviewOverallExperience,
+        int $interviewerScore,
+        int $questionsVariety,
+        int $questionsOverallScore,
+        string $notes,
+        DateTimeImmutable $createdAt
+        )
     {
+        try {
+            $this->id=uniqid('sentiment_', true);
+            $this->platformOverallExperience = $platformOverallExperience;
+            $this->interviewScore = $interviewScore;
+            $this->interviewOverallExperience = $interviewOverallExperience;
+            $this->interviewerScore = $interviewerScore;
+            $this->questionsVariety = $questionsVariety;
+            $this->questionsOverallScore = $questionsOverallScore;
+            $this->notes = $notes;
+            $this->createdAt = new DateTimeImmutable();
+        } catch (Exception $e) {
+            throw new RuntimeException('Error creating candidate sentiment: ' . $e->getMessage(), 0, $e);
+        }
     }
-
     public function getId(): string
     {
         return $this->id;
@@ -126,7 +148,7 @@ class CandidateSentiment
         $this->questionsOverallScore = $questionsOverallScore;
     }
 
-    public function getNotes(): ?string
+    public function getNotes(): string
     {
         return $this->notes;
     }
@@ -139,7 +161,7 @@ class CandidateSentiment
         $this->notes = $notes;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -147,7 +169,7 @@ class CandidateSentiment
     /**
      * @param DateTimeImmutable $createdAt
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }

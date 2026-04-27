@@ -7,6 +7,8 @@ namespace model;
 use DateTimeImmutable;
 use Exception;
 use RuntimeException;
+use enum\QuestionCategory;
+use enum\QuestionDifficulty;
 
 /**
  * Class
@@ -14,41 +16,59 @@ use RuntimeException;
  * Represents
  *
  * @package model
- * @author
+ * @author Ali Samy
  * @version 1.0
  * @since 27-04-2026
 */
 class Questions
 {
-    private int $id = 0;
-    private ?string $questions = null;
-    private ?string $description = null;
-    private ?QuestionCategory $category = null;
-    private ?string $recommendedBaseAnswer = null;
+    private string $id;
+    private string $questions;
+    private string $description;
+    private QuestionCategory $category;
+    private string $recommendedBaseAnswer;
     private array $testCases = [];
-    private ?QuestionDifficulty $difficulty = null;
-    private ?\DateTimeImmutable $createdAt = null;
+    private QuestionDifficulty $difficulty;
+    private DateTimeImmutable $createdAt;
 
     /***/
-    public function __construct()
-    {
-        throw new \BadMethodCallException('Not implemented.');
+    public function __construct(
+        string $questions,
+        string $description,
+        QuestionCategory $category,
+        string $recommendedBaseAnswer,
+        array $testCases,
+        QuestionDifficulty $difficulty,
+        DateTimeImmutable $createdAt
+    ) {
+        try {
+            $this->id = uniqid('question_', true);
+            $this->questions = $questions;
+            $this->description = $description;
+            $this->category = $category;
+            $this->recommendedBaseAnswer = $recommendedBaseAnswer;
+            $this->testCases = $testCases;
+            $this->difficulty = $difficulty;
+            $this->createdAt = new DateTimeImmutable();
+        } catch (Exception $e) {
+            throw new RuntimeException('Error creating question: ' . $e->getMessage(), 0, $e);
+        }
     }
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
 
-    public function getQuestions(): ?string
+    public function getQuestions(): string
     {
         return $this->questions;
     }
@@ -61,7 +81,7 @@ class Questions
         $this->questions = $questions;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -74,7 +94,7 @@ class Questions
         $this->description = $description;
     }
 
-    public function getCategory(): ?QuestionCategory
+    public function getCategory(): QuestionCategory
     {
         return $this->category;
     }
@@ -87,7 +107,7 @@ class Questions
         $this->category = $category;
     }
 
-    public function getRecommendedBaseAnswer(): ?string
+    public function getRecommendedBaseAnswer(): string
     {
         return $this->recommendedBaseAnswer;
     }

@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\UserRole;
-
 use DateTime;
 use DateTimeImmutable;
-use http\Exception\RuntimeException;
-use Exception as Exception;
+use enum\UserRole;
+use Exception;
+use RuntimeException;
 
 /**
  * Class User

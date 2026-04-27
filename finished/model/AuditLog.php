@@ -6,7 +6,7 @@ namespace model;
 
 use DateTimeImmutable;
 use Exception;
-use http\Exception\RuntimeException;
+use RuntimeException;
 
 /**
  * Class AuditLog
@@ -52,7 +52,7 @@ class AuditLog
             $this->performedBy = $performedBy;
             $this->createdAt = new DateTimeImmutable();
         } catch(Exception $e) {
-            throw new RuntimeException('Failed to create User: ' . $e->getMessage(), 0, $e);
+            throw new RuntimeException('Failed to create AuditLog: ' . $e->getMessage(), 0, $e);
         }
     }
 
@@ -64,7 +64,7 @@ class AuditLog
     /**
      * @param string $id
      */
-    public function setId(string $id): string
+    public function setId(string $id): void
     {
         $this->id = $id;
     }

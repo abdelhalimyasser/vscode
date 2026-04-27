@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace model;
 
 use DateTimeImmutable;
+use enum\ApplicationsStatus;
+use enum\ReferralBonusStatus;
 use Exception;
-use http\Exception\RuntimeException;
+use RuntimeException;
 
-use model\enum\ApplicationsStatus;
-use model\enum\ReferralBonusStatus;
 
 /**
  * Class Application
@@ -51,7 +51,7 @@ class Application
             $this->referralBonusStatus = $referralBonusStatus;
             $this->createdAt = new DateTimeImmutable();
         } catch (Exception $e) {
-            throw new RuntimeException('Error creating Application: ' . $e->getMessage());
+            throw new RuntimeException('Error creating Application: ' . $e->getMessage(), 0, $e);
         }
     }
 
@@ -68,7 +68,7 @@ class Application
         $this->id = $id;
     }
 
-    public function getStatus(): ?ApplicationsStatus
+    public function getStatus(): ApplicationsStatus
     {
         return $this->status;
     }
@@ -94,7 +94,7 @@ class Application
         $this->matchScore = $matchScore;
     }
 
-    public function getReferralBonusStatus(): ?ReferralBonusStatus
+    public function getReferralBonusStatus(): ReferralBonusStatus
     {
         return $this->referralBonusStatus;
     }
@@ -107,7 +107,7 @@ class Application
         $this->referralBonusStatus = $referralBonusStatus;
     }
 
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }

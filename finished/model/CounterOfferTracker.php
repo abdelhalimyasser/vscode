@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace model;
 
 use DateTimeImmutable;
+use enum\CounterOfferStatus;
 use Exception;
-use http\Exception\RuntimeException;
-use model\enum\CounterOfferStatus;
+use RuntimeException;
 
 
 /**

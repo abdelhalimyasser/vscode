@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\Ethnicity;
-use model\enum\Gender;
-
 use DateTimeImmutable;
+use enum\Ethnicity;
+use enum\Gender;
 use Exception;
 use RuntimeException;
 

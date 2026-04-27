@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace model;
 
 use DateTimeImmutable;
+use enum\AssessmentLanguage;
 use Exception;
-use model\enum\AssessmentLanguage;
-use model\enum\AssessmentStatus;
+use enum\AssessmentStatus;
 use RuntimeException;
 
 /**
@@ -69,7 +69,7 @@ class Assessment
         $this->id = $id;
     }
 
-    public function getLanguage(): ?AssessmentLanguage
+    public function getLanguage(): AssessmentLanguage
     {
         return $this->language;
     }
@@ -108,7 +108,7 @@ class Assessment
         $this->plagiarismScore = $plagiarismScore;
     }
 
-    public function getStartedAt(): ?DateTimeImmutable
+    public function getStartedAt(): DateTimeImmutable
     {
         return $this->startedAt;
     }
@@ -121,7 +121,7 @@ class Assessment
         $this->startedAt = $startedAt;
     }
 
-    public function getSubmittedAt(): ?DateTimeImmutable
+    public function getSubmittedAt(): DateTimeImmutable
     {
         return $this->submittedAt;
     }
@@ -134,7 +134,7 @@ class Assessment
         $this->submittedAt = $submittedAt;
     }
 
-    public function getStatus(): ?AssessmentStatus
+    public function getStatus(): AssessmentStatus
     {
         return $this->status;
     }

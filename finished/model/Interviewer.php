@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\UserRole;
-
 use DateTime;
+use enum\UserRole;
 use Exception;
-use http\Exception\RuntimeException;
+use RuntimeException;
+use BadMethodCallException;
 
 /**
  * Class Interviewer
@@ -74,21 +74,21 @@ class Interviewer extends Employee
 
     public function checkInterviewAvailibiltity(): bool
     {
-        throw new \BadMethodCallException('Not implemented.');
+        throw new BadMethodCallException('Not implemented.');
     }
 
     public function addQuestion(): bool
     {
-        throw new \BadMethodCallException('Not implemented.');
+        throw new BadMethodCallException('Not implemented.');
     }
 
     public function attendInterview(): bool
     {
-        throw new \BadMethodCallException('Not implemented.');
+        throw new BadMethodCallException('Not implemented.');
     }
 
     public function submintCandidateFeedback(): bool
     {
-        throw new \BadMethodCallException('Not implemented.');
+        throw new BadMethodCallException('Not implemented.');
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace model\enum;
+namespace enum;
 
 enum CounterOfferStatus: string
 {

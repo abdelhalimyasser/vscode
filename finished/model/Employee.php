@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\UserRole;
-
 use BadMethodCallException;
 use DateTime;
+use enum\UserRole;
 use Exception;
-use http\Exception\RuntimeException;
+use RuntimeException;
 
 /**
  * Class Employee

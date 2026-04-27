@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace model;
 
-use model\enum\UserRole;
-
 use DateTime;
+use enum\UserRole;
 use Exception;
 use RuntimeException;
 
