@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model;
 
-use model\InterviewParticipant;
+use models\InterviewParticipant;
 
 /**
  * Class
