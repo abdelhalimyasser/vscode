@@ -28,7 +28,9 @@ class AssessmentLog
     /**
      *
     */
-    public function __construct()
+    public function __construct(
+
+    )
     {
         throw new \BadMethodCallException('Not implemented.');
     }
