@@ -20,7 +20,7 @@ use RuntimeException;
 */
 class AssessmentLog
 {
-    private int $id = 0;
+    private string $id;
     private EventType $eventType;
     private int $assessmentId = 0;
     private DateTimeImmutable $timestamp;
